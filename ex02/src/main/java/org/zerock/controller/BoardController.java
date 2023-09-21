@@ -34,6 +34,12 @@ public class BoardController {
 		m.addAttribute("pageMaker", new PageDTO(cri, service.cnt(cri)));
 	}
 	
+	@GetMapping("/del")
+	public void del(Long bno, Model m, Criteria cri) {
+		log.info("삭제 페이지");
+		m.addAttribute("bno", bno);
+	}
+	
 	@GetMapping("/register")
 	public void register(BoardVO vo, Model m){
 		log.info("get");

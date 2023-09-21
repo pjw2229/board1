@@ -33,8 +33,8 @@
                                     	<textarea class="form-control" rows="5" placeholder="내용 입력" name="content" id="content">${board.content}</textarea>
                                     </div>
                                     <button type="button" class="btn btn-default" data-oper="modify">수정</button>
-                                    <a href="/board/del?bno=${board.bno}&pageNum=${cri.pageNum}&amount=${cri.amount}">
-                                    	<button type="button" class="btn btn-default" data-oper="remove">삭제</button>
+                                    <a href="/board/del?bno=${board.bno}">
+                                    	<button class="btn btn-default" data-oper="remove">삭제</button>
                                     </a>
                                     <button type="button" class="btn btn-default" data-oper="list">목록</button>
                             	</form>
