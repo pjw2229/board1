@@ -53,6 +53,7 @@
 		var formObj = $("form");
 
 		$("button").on("click",function(e){
+			console.log("버튼 누름");
 			e.preventDefault(); //버튼에 걸린 이벤트 없애고
 			var operation = $(this).data("oper") // data-oper속성의 값읽기 즉,어떤 버튼인지 확인
 

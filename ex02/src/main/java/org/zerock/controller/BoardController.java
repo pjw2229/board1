@@ -35,7 +35,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/del")
-	public void del(Long bno, Model m, Criteria cri) {
+	public void del(Long bno, Model m) {
 		log.info("삭제 페이지");
 		m.addAttribute("bno", bno);
 	}
