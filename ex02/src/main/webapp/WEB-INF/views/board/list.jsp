@@ -28,6 +28,9 @@
                         			<div>오늘 쓴 글 갯수 : ${todayCnt}개</div>
                         		</div>
                         	</td>
+                        	<td>
+                        		<div>현재 시간 : ${serverTime}</div>
+                        	</td>
                     	</tr>
                     </table><!-- /.panel-heading -->
                     <div class="panel-body">

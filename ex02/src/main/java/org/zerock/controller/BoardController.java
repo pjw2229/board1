@@ -1,5 +1,9 @@
 package org.zerock.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +26,10 @@ public class BoardController {
 	BoardService service;
 
 	@GetMapping("/list")	// board/list
-	public void list(Model m, Criteria cri) {
+	public void list(Model m, Criteria cri, Locale locale) {
 		log.info("list url 요청...");	
+		
+		m.addAttribute("serverTime", DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale).format(new Date()));
 		m.addAttribute("cnt", service.cnt(cri));
 		m.addAttribute("todayCnt", service.todayCnt(cri));
 		m.addAttribute("list", service.getList(cri));	// -> board/list.jsp
