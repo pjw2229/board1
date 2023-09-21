@@ -33,9 +33,7 @@
                                     	<textarea class="form-control" rows="5" placeholder="내용 입력" name="content" id="content">${board.content}</textarea>
                                     </div>
                                     <button type="button" class="btn btn-default" data-oper="modify">수정</button>
-                                    <a href="/board/del?bno=${board.bno}">
-                                    	<button class="btn btn-default" data-oper="remove">삭제</button>
-                                    </a>
+                                    <button type="button" class="btn btn-default" data-oper="del">삭제</button>
                                     <button type="button" class="btn btn-default" data-oper="list">목록</button>
                             	</form>
                         	</div><!-- /.col-lg-6 (nested) -->
@@ -67,12 +65,18 @@
 					return;
 				}
 			}
+			else if(operation === "del"){
+				console.log("삭제 버튼 누름");
+				var bno = "${board.bno}";
+				self.location="/board/del";
+			}
 			//else if(operation === "remove") //삭제 버튼이 눌리면
 			//	formObj.attr("action","/board/remove");
-			else if(operation === "list"){ //리스트 버튼이 눌리면
+			else if(operation === "list"){ // 목록 버튼이 눌리면
 				self.location="/board/list";  //board/list 요청
 				return; //리턴없으면 아래문장이 실행됨으로
 			}
+			
 			console.log("submit 동작합니다.");
 			formObj.submit(); //submit 전송
 		}); //e는 버튼 이벤트
