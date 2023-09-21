@@ -115,10 +115,7 @@
 <%@ include file="../includes/footer.jsp" %>
 <script>
 	$(function(){
-		$("#search").click(function(){	// 주의 : 동적생성 금지
-			console.log("검색 버튼 클릭");
-			//if($("form").find("option:selected").val() == "")
-			//	alert("종류를 선택 후 입력하시오.");
+		$("#search").click(function(){
 			if(!$("#keyword").val())
 				alert("검색어 입력 후 버튼을 누르십시오.");
 		});

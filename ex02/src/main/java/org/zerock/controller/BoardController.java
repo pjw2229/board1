@@ -27,8 +27,6 @@ public class BoardController {
 
 	@GetMapping("/list")	// board/list
 	public void list(Model m, Criteria cri, Locale locale) {
-		log.info("list url 요청...");	
-		
 		m.addAttribute("serverTime", DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale).format(new Date()));
 		m.addAttribute("cnt", service.cnt(cri));
 		m.addAttribute("todayCnt", service.todayCnt(cri));
