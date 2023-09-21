@@ -15,9 +15,11 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-6">
-								${bno}번 항목을 삭제하기 위해서는 비밀번호가 필요합니다.<br>
-								<input type="password" name="pw"><br>
-								<button>확인</button>
+								<form action="remove" method="post">
+									<input type="hidden" name="bno" value="${bno}">
+									삭제 비밀번호 : <input type="password" name="pw"><br>
+									<input type="submit" value="전송">
+								</form>
 							</div>
 						</div>
 					</div>
@@ -26,5 +28,11 @@
         </div>
 	</div>
 <%@ include file="../includes/footer.jsp" %>
+<script>
+	var flag = "{flag}"		// "":삭제요청 or "실패": 비밀번호 오류
+	if(flag == "실패"){
+		alert("잘못된 비밀번호");
+	}
+</script>
 </body>
 </html>

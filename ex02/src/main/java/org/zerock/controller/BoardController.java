@@ -33,13 +33,7 @@ public class BoardController {
 		m.addAttribute("list", service.getList(cri));	// -> board/list.jsp
 		m.addAttribute("pageMaker", new PageDTO(cri, service.cnt(cri)));
 	}
-	
-	@GetMapping("/del")
-	public void del(Long bno, Model m) {
-		log.info("삭제 페이지");
-		m.addAttribute("bno", bno);
-	}
-	
+
 	@GetMapping("/register")
 	public void register(BoardVO vo, Model m){
 		log.info("get");
@@ -61,14 +55,24 @@ public class BoardController {
 		m.addAttribute("cri", cri);		// -> board/get.jsp
 	}
 	
+	@GetMapping("/remove")
+	public void remove(Long bno, Model m) {
+		m.addAttribute("bno", bno);
+	}
+	
 	@PostMapping("/remove")		// 삭제(글번호 - bno) board/remove (post)	<- 입력화면(get)
-	public String remove(Long bno, RedirectAttributes rttr, Criteria cri) {
+	public String remove(Long bno, RedirectAttributes rttr, String pw) {
 		log.info("삭제 url 요청");
-		if(service.remove(bno)) {		// 이상 없으면 result 이름으로 success 문자 전송
-			rttr.addFlashAttribute("oper", "remove");
-			rttr.addFlashAttribute("result", bno);
+		if(pw.equals("1234")) {
+			if(service.remove(bno)) {		// 이상 없으면 result 이름으로 success 문자 전송
+				rttr.addFlashAttribute("oper", "remove");
+				rttr.addFlashAttribute("result", bno);
+			}
+			return "redirect:/board/list";
+		}else {
+			rttr.addFlashAttribute("flag", "실패");
+			return "redirect:/board/remove?bno=" + bno;
 		}
-		return "redirect:/board/list?pageNum=" + cri.getPageNum() + "&amount=" + cri.getAmount();
 	}
 
 	@GetMapping("/modify")
