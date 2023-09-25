@@ -8,6 +8,7 @@
 		insert into product(code, pname, cost, pnum, jnum, sale, gcode) values(#{code},#{pname},#{cost},#{pnum},#{jnum},#{sale},#{gcode})
 	</insert>
 	<select id="readOne" resultType="edu.mit.domain.ProductVO">
+		select * from product where code = #{code}
 	</select>
 	
 	<select id="rop" resultType="edu.mit.domain.TableVO">

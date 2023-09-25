@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mit.domain.ProductVO;
 import edu.mit.service.ProductService;
@@ -33,6 +34,11 @@ public class ProductController {
 		m.addAttribute("table", service.rop());
 	}
 	
+	@GetMapping("/check")
+	public void check() {
+		
+	}
+	
 	@GetMapping("/prior")
 	public void prior(Model m) {
 		m.addAttribute("table", service.prior());
@@ -41,6 +47,12 @@ public class ProductController {
 	@GetMapping("/groupBy")
 	public void groupBy(Model m) {
 		m.addAttribute("table", service.groupBy());
+	}
+
+	@GetMapping("/checked")
+	public void checked(String code, Model m) {
+		m.addAttribute("groupcode", service.readGroupCode());
+		m.addAttribute("product", service.readOne(code));
 	}
 	
 	@PostMapping("/create")
