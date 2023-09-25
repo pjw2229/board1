@@ -5,6 +5,7 @@
 		select * from groupcode order by gcode
 	</select>
 	<insert id="create">
+		insert into product(code, pname, cost, pnum, jnum, sale, gcode) values(#{code},#{pname},#{cost},#{pnum},#{jnum},#{sale},#{gcode})
 	</insert>
 	<select id="readOne" resultType="edu.mit.domain.ProductVO">
 	</select>
