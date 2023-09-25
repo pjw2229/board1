@@ -44,6 +44,12 @@
 				return false;
 			}
 		});
+		
+		$("#updateBtn").click(function(){
+			if(!confirm("${product.code} 항목을 수정하시겠습니까?")){
+				return false;
+			}
+		});
 	</script>
 </body>
 </html>

@@ -27,7 +27,7 @@
 					</select>
 				</li>
 			</ul>
-			<input type="submit" value="조회">
+			<input type="submit" value="조회" id="codeBtn">
 			<input type="button" value="삭제" disabled>
 			<input type="button" value="수정" disabled>
 			<input type="button" onclick="location.href='mainMenu'" value="메인화면">

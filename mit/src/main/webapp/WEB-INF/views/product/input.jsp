@@ -12,12 +12,12 @@
 		<legend>생산관리 등록화면</legend>
 		<form action="create" method="post">
 			<ul>
-				<li>제품코드&nbsp;<input type="text" name="code"></li>
-				<li>제품이름&nbsp;<input type="text" name="pname"></li>
-				<li>제품원가&nbsp;<input type="text" name="cost"></li>
-				<li>목표수량&nbsp;<input type="text" name="pnum"></li>
-				<li>재고수량&nbsp;<input type="text" name="jnum"></li>
-				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sale"></li>
+				<li>제품코드&nbsp;<input type="text" class="textarea" name="code"></li>
+				<li>제품이름&nbsp;<input type="text" class="textarea" name="pname"></li>
+				<li>제품원가&nbsp;<input type="text" class="textarea" name="cost"></li>
+				<li>목표수량&nbsp;<input type="text" class="textarea" name="pnum"></li>
+				<li>재고수량&nbsp;<input type="text" class="textarea" name="jnum"></li>
+				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="textarea" name="sale"></li>
 				<li>
 					그룹이름
 					<select name="gcode">
@@ -27,7 +27,7 @@
 					</select>
 				</li>
 			</ul>
-			<input type="submit" value="등록">
+			<input type="submit" value="등록" id="inputBtn">
 			<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 		</form>
 	</fieldset>
