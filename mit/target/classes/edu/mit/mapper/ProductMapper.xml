@@ -10,4 +10,15 @@
 	<select id="readOne" resultType="edu.mit.domain.ProductVO">
 	</select>
 	
+	<select id="rop" resultType="edu.mit.domain.TableVO">
+		select pname str, cost * jnum no from product order by no desc
+	</select>
+	<select id="prior" resultType="edu.mit.domain.TableVO">
+	<![CDATA[
+		select pname str, pnum - jnum no from product where jnum < pnum * 0.2
+	]]>
+	</select>
+	<select id="groupBy" resultType="edu.mit.domain.TableVO">
+		select gname str, sum(jnum) as no from product join groupcode using (gcode) group by gname
+	</select>
 </mapper>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.mit.domain.GroupCodeVO;
 import edu.mit.domain.ProductVO;
+import edu.mit.domain.TableVO;
 
 public interface ProductService {
 	long create(ProductVO vo);
@@ -12,4 +13,8 @@ public interface ProductService {
 	long update(ProductVO vo);
 	long delete(String code);
 	List<GroupCodeVO> readGroupCode();
+	
+	List<TableVO> rop();
+	List<TableVO> prior();
+	List<TableVO> groupBy();
 }

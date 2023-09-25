@@ -7,6 +7,7 @@ import edu.mit.mapper.ProductMapper;
 import edu.mit.service.ProductServiceImpl;
 import edu.mit.domain.GroupCodeVO;
 import edu.mit.domain.ProductVO;
+import edu.mit.domain.TableVO;
 import edu.mit.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -45,5 +46,20 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<GroupCodeVO> readGroupCode() {
 		return pm.readGroupCode();
+	}
+	
+	@Override
+	public List<TableVO> rop() {
+		return pm.rop();
+	}
+	
+	@Override
+	public List<TableVO> prior() {
+		return pm.prior();
+	}
+	
+	@Override
+	public List<TableVO> groupBy() {
+		return pm.groupBy();
 	}
 }

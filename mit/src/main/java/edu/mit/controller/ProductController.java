@@ -28,6 +28,21 @@ public class ProductController {
 		m.addAttribute("groupcode", service.readGroupCode());
 	}
 	
+	@GetMapping("/rop")
+	public void rop(Model m) {
+		m.addAttribute("table", service.rop());
+	}
+	
+	@GetMapping("/prior")
+	public void prior(Model m) {
+		m.addAttribute("table", service.prior());
+	}
+	
+	@GetMapping("/groupBy")
+	public void groupBy(Model m) {
+		m.addAttribute("table", service.groupBy());
+	}
+	
 	@PostMapping("/create")
 	public String create(ProductVO vo) {
 		service.create(vo);

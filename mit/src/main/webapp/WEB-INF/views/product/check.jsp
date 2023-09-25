@@ -7,20 +7,6 @@
 <title>생산관리 조회 & 수정</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js">
 </script>
-<script>
-	$("#readBtn").click(function()){
-		$("#delBtn").attr("disabled","true");
-		$("#updateBtn").attr("disabled","true");
-		$(this).attr("disabled","false");
-		$("#pnameText").text(${pname});
-	}
-				
-	$("#delBtn").click(function()){
-		$("#readBtn").attr("disabled","true");
-		$("#updateBtn").attr("disabled","false");
-		$(this).attr("disabled","false");
-	}
-</script>
 </head>
 <body>
 	<h2>생산관리 조회 & 수정화면</h2>
@@ -48,7 +34,7 @@
 			<input type="submit" formaction="delete" value="삭제" id="delBtn" disabled>
 			<input type="submit" formaction="update" value="수정" id="updateBtn" disabled>
 			
-			<input type="button" onclick="location.href='home.jsp'" value="메인화면">
+			<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 		</form>	
 	</fieldset>
 </body>

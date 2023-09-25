@@ -13,13 +13,13 @@
 			<th>제품이름</th>
 			<th>총이익 금액</th>
 		</tr>
-	<c:forEach var="r" items="${rop}">
+	<c:forEach var="t" items="${table}">
 		<tr>
-			<td>${r.pname}</td>
-			<td>${r.gp}</td>
+			<td>${t.str}</td>
+			<td>${t.no}</td>
 		</tr>
 	</c:forEach>
 	</table>
-	<input type="button" onclick="location.href='home.jsp'" value="메인화면">
+	<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 </body>
 </html>

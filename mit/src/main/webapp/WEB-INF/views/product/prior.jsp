@@ -13,13 +13,13 @@
 			<th>제품이름</th>
 			<th>생산해야 할 수량</th>
 		</tr>
-	<c:forEach var="p" items="${priority}">
+	<c:forEach var="t" items="${table}">
 		<tr>
-			<td>${p.pname}</td>
-			<td>${p.prior}</td>
+			<td>${t.str}</td>
+			<td>${t.no}</td>
 		</tr>
 	</c:forEach>
 	</table>
-	<input type="button" onclick="location.href='home.jsp'" value="메인화면">
+	<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 </body>
 </html>

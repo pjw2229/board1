@@ -13,13 +13,13 @@
 			<th>그룹이름</th>
 			<th>재고수량</th>
 		</tr>
-	<c:forEach var="a" items="${amount}">
+	<c:forEach var="t" items="${table}">
 		<tr>
-			<td>${a.gname}</td>
-			<td>${a.amount}</td>
+			<td>${t.str}</td>
+			<td>${t.no}</td>
 		</tr>
 	</c:forEach>
 	</table>
-	<input type="button" onclick="location.href='home.jsp'" value="메인화면">
+	<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 </body>
 </html>
