@@ -19,7 +19,7 @@
 				<li>제품원가&nbsp;<input type="text" value="${product.cost}" name="cost" id="costText"></li>
 				<li>목표수량&nbsp;<input type="text" value="${product.pnum}" name="pnum" id="pnumText"></li>
 				<li>재고수량&nbsp;<input type="text" value="${product.jnum}" name="jnum" id="jnumText"></li>
-				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${product.sale}" id="saleText" name="sale"></li>
+				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${product.sale}" id="saleText" name="sale"></li>
 				<li>
 					그룹이름
 					<select name="gcode" id="gSelect">
@@ -38,5 +38,12 @@
 			<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 		</form>
 	</fieldset>
+	<script>
+		$("#delBtn").click(function(){
+			if(!confirm("${product.code} 항목을 삭제하시겠습니까?")){
+				return false;
+			}
+		});
+	</script>
 </body>
 </html>

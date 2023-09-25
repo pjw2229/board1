@@ -15,14 +15,14 @@
 		<form action="checked" method="get">
 			<ul>
 				<li>제품코드&nbsp;<input type="text" name="code" id="codeText"></li>
-				<li>제품이름&nbsp;<input type="text" readonly></li>
-				<li>제품원가&nbsp;<input type="text" readonly></li>
-				<li>목표수량&nbsp;<input type="text" readonly></li>
-				<li>재고수량&nbsp;<input type="text" readonly></li>
-				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" readonly></li>
+				<li>제품이름&nbsp;<input type="text" disabled></li>
+				<li>제품원가&nbsp;<input type="text" disabled></li>
+				<li>목표수량&nbsp;<input type="text" disabled></li>
+				<li>재고수량&nbsp;<input type="text" disabled></li>
+				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" disabled></li>
 				<li>
 					그룹이름
-					<select readonly>
+					<select disabled>
 						<option value=""></option>
 					</select>
 				</li>
