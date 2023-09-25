@@ -2,9 +2,18 @@ package edu.mit.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+import edu.mit.mapper.ProductMapper;
+import edu.mit.service.ProductServiceImpl;
+
 import edu.mit.domain.ProductVO;
 import edu.mit.mapper.ProductMapper;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
+@AllArgsConstructor
+@Log4j
+@Service	// spring에 service 객체로 인식시키기 위해 사용(현재는 @Component와 같다.)
 public class ProductServiceImpl implements ProductService {
 	private ProductMapper pm;
 
@@ -29,8 +38,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public long delete(ProductVO vo) {
-		return pm.delete(vo);
+	public long delete(String code) {
+		return pm.delete(code);
 	}
-
 }

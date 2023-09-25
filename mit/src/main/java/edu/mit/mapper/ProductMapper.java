@@ -8,5 +8,5 @@ public interface ProductMapper {
 	ProductVO readOne(String code);
 	List<ProductVO> readList();
 	long update(ProductVO vo);
-	long delete(ProductVO vo);
+	long delete(String code);
 }

@@ -66,9 +66,6 @@ public class BoardControllerTests {
 	
 	@Test
 	public void testModify() throws Exception {
-		log.info("url 삭제처리 모델데이터 : "
-		+ mm.perform(MockMvcRequestBuilders.post("/board/modify")
-		.param("bno", "13").param("title", "junit인가?").param("content", "MockMVC인가?"))
-		.andReturn().getModelAndView().getViewName());
+		log.info("url 삭제처리 모델데이터 : " + mm.perform(MockMvcRequestBuilders.post("/board/modify").param("bno", "13").param("title", "junit인가?").param("content", "MockMVC인가?")).andReturn().getModelAndView().getViewName());
 	}
 }
