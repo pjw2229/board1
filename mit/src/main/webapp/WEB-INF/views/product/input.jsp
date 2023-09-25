@@ -28,7 +28,7 @@
 				</li>
 			</ul>
 			<input type="submit" value="등록">
-			<input type="button" onclick="location.href='home.jsp'" value="메인화면">
+			<input type="button" onclick="location.href='mainMenu'" value="메인화면">
 		</form>
 	</fieldset>
 </body>

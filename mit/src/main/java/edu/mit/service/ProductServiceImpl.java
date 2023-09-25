@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import edu.mit.mapper.ProductMapper;
 import edu.mit.service.ProductServiceImpl;
-
+import edu.mit.domain.GroupCodeVO;
 import edu.mit.domain.ProductVO;
 import edu.mit.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
@@ -40,5 +40,10 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public long delete(String code) {
 		return pm.delete(code);
+	}
+	
+	@Override
+	public List<GroupCodeVO> readGroupCode() {
+		return pm.readGroupCode();
 	}
 }
