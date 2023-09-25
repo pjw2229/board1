@@ -10,7 +10,12 @@
 	<select id="readOne" resultType="edu.mit.domain.ProductVO">
 		select * from product where code = #{code}
 	</select>
-	
+	<update id="update">
+		update product set pname=#{pname}, cost=#{cost}, pnum=#{pnum}, jnum=#{jnum}, sale=#{sale}, gcode=#{gcode} where code=#{code}
+	</update>
+	<delete id="delete">
+		delete from product where code = #{code}
+	</delete>
 	<select id="rop" resultType="edu.mit.domain.TableVO">
 		select pname str, cost * jnum no from product order by no desc
 	</select>

@@ -22,10 +22,12 @@
 				<li>출고가&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${product.sale}" id="saleText" name="sale"></li>
 				<li>
 					그룹이름
-					<select value="${product.gcode}" name="gcode" id="gSelect">
-						<option value=""></option>
+					<select name="gcode" id="gSelect">
 						<c:forEach var="group" items="${groupcode}">
-							<option value="${group.gcode}">${group.gname}</option>
+							<option value="${group.gcode}"
+							<c:if test="${group.gcode == product.gcode}">
+								selected
+							</c:if>>${group.gname}</option>
 						</c:forEach>
 					</select>
 				</li>

@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class GroupCodeVO {
-	private String gcode, gname;
+	private char gcode;
+	private String gname;
 }

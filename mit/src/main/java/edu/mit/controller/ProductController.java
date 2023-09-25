@@ -60,4 +60,16 @@ public class ProductController {
 		service.create(vo);
 		return "redirect:/product/mainMenu";
 	}
+	
+	@PostMapping("/update")
+	public String update(ProductVO vo) {
+		service.update(vo);
+		return "redirect:/product/check";
+	}
+	
+	@PostMapping("/delete")
+	public String delete(String code) {
+		service.delete(code);
+		return "redirect:/product/check";
+	}
 }
